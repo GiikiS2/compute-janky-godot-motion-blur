@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="another 3d thingy"
+config/name="motion blur "
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [display]
 
@@ -55,6 +55,5 @@ mv_jump={
 
 driver/threads/thread_model=0
 lights_and_shadows/directional_shadow/size=2048
-anti_aliasing/screen_space_roughness_limiter/enabled=false
 viewport/hdr_2d=true
 lights_and_shadows/positional_shadow/atlas_size=2048

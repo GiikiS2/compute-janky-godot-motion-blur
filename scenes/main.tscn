@@ -1,8 +1,8 @@
 [gd_scene load_steps=31 format=3 uid="uid://bnf8i6hbc0n83"]
 
 [ext_resource type="Script" path="res://scripts/world_environment_plus.gd" id="1_6fa6e"]
-[ext_resource type="Script" path="res://shaders/post_process/motion_blur.gd" id="1_6w3rn"]
 [ext_resource type="Script" path="res://character.gd" id="1_184c3"]
+[ext_resource type="Script" path="res://motion blur 2/motion_vectors.gd" id="1_hj7wy"]
 [ext_resource type="Script" path="res://camera_3d.gd" id="2_34p80"]
 [ext_resource type="Shader" path="res://shaders/post_process/motion_blur.gdshader" id="3_nv5lv"]
 [ext_resource type="Script" path="res://blurtest.gd" id="6_gnlen"]
@@ -38,17 +38,22 @@ fog_enabled = true
 fog_light_energy = 4.0
 fog_aerial_perspective = 1.0
 
-[sub_resource type="CompositorEffect" id="CompositorEffect_ibfws"]
+[sub_resource type="CompositorEffect" id="CompositorEffect_l5fk8"]
 resource_local_to_scene = false
 resource_name = ""
 enabled = true
 effect_callback_type = 4
 needs_motion_vectors = true
-needs_normal_roughness = true
-script = ExtResource("1_6w3rn")
+needs_normal_roughness = false
+script = ExtResource("1_hj7wy")
+blending = false
+Passes = 12
+Intensity = 16.0
+vPasses = 8
+vSize = 12.0
 
 [sub_resource type="Compositor" id="Compositor_nmbee"]
-compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_ibfws")])
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_l5fk8")])
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kmswr"]
 shader = ExtResource("3_nv5lv")
@@ -155,8 +160,10 @@ script = ExtResource("1_6fa6e")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment"]
 layer = -1
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="WorldEnvironment/CanvasLayer"]
+visible = false
 texture_filter = 1
 texture_repeat = 1
 material = SubResource("ShaderMaterial_kmswr")

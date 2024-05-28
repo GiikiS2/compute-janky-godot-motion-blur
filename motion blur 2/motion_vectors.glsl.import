@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://byttrnht00ub8"
+path="res://.godot/imported/motion_vectors.glsl-9b0f7b32e6529cec2cf621f24a60b26b.res"
+
+[deps]
+
+source_file="res://motion blur 2/motion_vectors.glsl"
+dest_files=["res://.godot/imported/motion_vectors.glsl-9b0f7b32e6529cec2cf621f24a60b26b.res"]
+
+[params]
+
